@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>Menu</h2>
+
+        <ul>
+            <li>📅 Today</li>
+            <li>📌 Upcoming</li>
+            <li>⭐ Someday</li>
+            <li>🕒 Anytime</li>
+        </ul>
+    </aside>
+
+    <!-- Main Section -->
+    <main class="main-content">
+
+        <h1>To Do List</h1>
+
+        <div class="add-task">
+
+            <input
+                type="text"
+                class="task-input"
+                placeholder="Enter your task">
+                <p class="task-error"></p>
+
+            <input
+                type="time"
+                class="time-input">
+                <p class="time-error"></p>
+                
+            <button class="add-btn">
+                Add Task
+            </button>
+            <br>
+            <br>
+
+        </div>
+
+        <div class="filter">
+
+            <button class="all-btn">All</button>
+            <br>
+            <button class="pending-btn">Pending :</button>
+            <br>
+            <button class="completed-btn">Completed :</button>
+
+        </div>
+
+        <!-- Task List -->
+        <div class="task-list">
+
+            <!-- JavaScript tasks --->
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
