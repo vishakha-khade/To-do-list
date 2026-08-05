@@ -1,8 +1,8 @@
-# 📝 To-Do List
+#  To-Do List
 
 A simple and responsive To-Do List application built with HTML, CSS, and JavaScript. It helps users organize daily tasks and stores data using Local Storage.
 
-## 🚀 Features
+##  Features
 
 - Add new tasks
 - Set task time
@@ -10,14 +10,14 @@ A simple and responsive To-Do List application built with HTML, CSS, and JavaScr
 - Delete tasks
 - Save tasks using Local Storage
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 - HTML5
 - CSS3
 - JavaScript
 - Local Storage
 
-## 🎯 Future Improvements
+##  Future Improvements
 - Responsive design
 - Clean and modern UI
 - Edit task
