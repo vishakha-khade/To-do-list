@@ -21,6 +21,11 @@
             <li>⭐ Someday</li>
             <li>🕒 Anytime</li>
         </ul>
+        <div class="task-list">
+
+            <!-- JavaScript tasks --->
+
+        </div>
     </aside>
 
     <!-- Main Section -->
@@ -30,39 +35,38 @@
 
         <div class="add-task">
 
+    <div class="input-row">
+
+        <div class="task-box">
+             <label for="task" class="task-label">Task :</label>
             <input
                 type="text"
                 class="task-input"
-                placeholder="Enter your task">
-                <p class="task-error"></p>
+                placeholder="Enter your task" id="task">
+            <p class="task-error"></p>
+        </div>
 
+        <div class="time-box">
+            <label for="time" class="time-label">Time :</label>
             <input
                 type="time"
-                class="time-input">
-                <p class="time-error"></p>
-                
-            <button class="add-btn">
-                Add Task
-            </button>
-            <br>
-            <br>
-
+                class="time-input"
+                id="time">
+           
+             <p class="time-error"></p>
         </div>
+        <button class="add-btn">
+            Add Task
+        </button>
+    </div>
+
+</div>
 
         <div class="filter">
 
             <button class="all-btn">All</button>
-            <br>
             <button class="pending-btn">Pending :</button>
-            <br>
             <button class="completed-btn">Completed :</button>
-
-        </div>
-
-        <!-- Task List -->
-        <div class="task-list">
-
-            <!-- JavaScript tasks --->
 
         </div>
 

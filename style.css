@@ -1,7 +1,5 @@
 *{
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 body{
     background-image: url("images/backroundimage.jpg");
@@ -20,24 +18,240 @@ body{
     /* background: rgba(255, 255, 255, 0.15); */
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    border-radius: 20px;
 
     background: rgba(64, 248, 159, 0.18);
     border: 1px solid rgba(50, 232, 226, 0.3);
     box-shadow: 0 8px 32px rgba(243, 230, 230, 0.15);
-    border: 1px solid rgba(239, 241, 248, 0.25);
     border-radius: 20px;
-    height: 50vh;
+    height: 60vh;
     width: 50%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 20px;
-    
+}
+.sidebar{
+    padding-left: 10px;
+    border-radius: 15px;
+    width: 20vw;
+    height: 50vh;
+    margin: 10px;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-left: 0rcap;
+    text-align: left;
+    color: white;
+    background-color: rgb(12, 128, 89);
+}
+h2{
+    padding-bottom: 4px;
+    margin-top: 2px;
+    padding: 4px;
+    background-color:  rgba(8, 85, 59, 0.248);
+    border-radius: 10px;
+   
 }
 .sidebar ul{
     list-style: none;
     padding: 0;
     margin: 0;
+}
+
+.main-content{
+    margin:10px;
+    padding:20px;
+    width:50%;
+    height:50vh;
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    background: rgba(64,248,159,0.18);
+    border:1px solid rgba(24,233,226,0.3);
+    border-radius:15px;
+}
+
+.main-content h1{
+    color:white;
+    text-align:center;
+    margin-bottom:20px;
+}
+.add-task{
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: center;
+    gap: 15px;
+}
+.input-row{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+.task-label{
+    color: white;
+}
+.task-box{
+    display: flex;
+    flex-direction: column;
+}
+.task-input{
+
+    flex:1;
+    width:180px;
+    min-height: 30px;
+    padding:0 12px;
+
+    border:none;
+    outline:none;
+    border-radius:8px;
+    background:rgba(255,255,255,0.15);
+    color:white;
+    font-size:15px;
+    transition:.3s;
+}
+
+.task-input::placeholder{
+    color:rgba(255,255,255,.8);
+}
+
+.task-input:focus{
+
+    border:2px solid rgb(41,233,175);
+
+    box-shadow:0 0 10px rgba(41,233,175,.4);
+}
+.filter{
+    display: flex;
+    justify-content: center;
+    margin-top:10px;
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.filter button{
+    min-width:100px;
+    height:28px;
+    border:none;
+    border-radius:8px;
+    background:rgba(255,255,255,.15);
+    color:white;
+    font-size:15px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.filter button:hover{
+
+    background:#14b67b;
+    transform:translateY(-2px);
+    box-shadow:0 5px 15px rgba(0,0,0,.25);
+}
+ .time-box{
+    flex-shrink:0;
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+}
+
+.time-label{
+
+    color:white;
+    font-size:15px;
+}
+.time-input{
+
+    width:120px;
+    height:40px;
+    border:none;
+    outline:none;
+    border-radius:8px;
+    padding:0 10px;
+    background:rgba(255,255,255,.15);
+    color:white;
+    font-size:15px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.time-input:focus{
+    border:2px solid rgb(41,233,175);
+    box-shadow:0 0 10px rgba(41,233,175,.4);
+}
+.add-btn{
+    margin-left: 20px;
+    width:150px;
+    height:30px;
+    border:none;
+    border-radius:8px;
+    background:linear-gradient(135deg,#0c8059,#17b67b);
+    color:white;
+    font-size:14.5px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.add-btn:hover{
+
+    transform:translateY(-2px);
+    box-shadow:0 8px 18px rgba(0,0,0,.25);
+    background:linear-gradient(135deg,#0a6d4c,#149b6a);
+}
+.deletebtn{
+    height: 20px;
+    font-size: small;
+    padding: 2px;
+    border:none;
+    border-radius:6px;
+    background:#f88f9d;
+    color:rgb(12, 9, 9);
+    cursor:pointer;
+    transition:.3s;
+}
+
+.deletebtn:hover{
+
+    background:#e8415a;
+    transform:scale(1.05);
+}
+
+.task-error,
+.time-error{
+    
+    margin:4px 0 0;
+    color:#e0142f;
+    font-size:13px;
+}
+.displaydiv{
+    font-size: medium;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    height: 30px;
+    margin-top:10px;
+    padding:10px;
+    background:rgba(255,255,255,.15);
+    border-radius:8px;
+}
+.displaydiv{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+.deletebtn{
+    margin-left:auto;
+}
+.task-list{
+    border-radius:8px;
+    height: 40%;
+    background-color: #149b6a;
+    margin-top:2px;
+    max-height:180px;
+    overflow-y:auto;
 }

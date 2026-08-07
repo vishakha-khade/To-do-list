@@ -44,24 +44,52 @@ addBtn.addEventListener('click', function(){
 function displayTask(){
     taskList.innerHTML = "";
 
-    tasks.forEach(function(item, tasks){
+    tasks.forEach(function(item, index){
         let displaydiv = document.createElement("div");
         displaydiv.className = "displaydiv"
         let check = document.createElement("input");
+        check.checked = item.complete;
         check.type = "checkbox"
         check.className = "tickbox"
-        taskList.appendChild(check)
-        displaydiv.textContent = item.task +" "+  item.time;
-        taskList.appendChild(displaydiv);
+        let taskText = document.createElement("span");
+        taskText.textContent = item.task + " " + item.time;
+
+        // displaydiv.textContent = item.task +" "+  item.time;
+        
         
         let deleteBtn = document.createElement('button');
-        taskList.appendChild(deleteBtn);
         deleteBtn.textContent = "Delete";
+        deleteBtn.className = "deletebtn"
+        displaydiv.appendChild(check);
+        displaydiv.append(item.task + " " + item.time);
+        displaydiv.appendChild(deleteBtn);
+        displaydiv.appendChild(taskText);
+
+        taskList.appendChild(displaydiv);
+       
+
+        deleteBtn.addEventListener("click", function(){
+        tasks.splice(index,1);
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+        displayTask();
+
+});
+check.addEventListener("click", function(){
+            // item.complete = check.checked;
+            // localStorage.setItem("tasks", JSON.stringify(tasks));
+            // taskText.textContent = item.task + " " + item.time;
+            // displayTask()
+            item.complete = check.checked;
+
+if(item.complete){
+    taskText.style.textDecoration = "line-through";
+}else{
+    taskText.style.textDecoration = "none";
+}
+localStorage.setItem("tasks", JSON.stringify(tasks));
+        })
+
     })
     
 };
-function update(){
-
-}
-
 
