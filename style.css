@@ -13,12 +13,9 @@ body{
     min-height: 100vh;
     width: 100%;
 }
-
 .container{
-    /* background: rgba(255, 255, 255, 0.15); */
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-
     background: rgba(64, 248, 159, 0.18);
     border: 1px solid rgba(50, 232, 226, 0.3);
     box-shadow: 0 8px 32px rgba(243, 230, 230, 0.15);
@@ -31,7 +28,7 @@ body{
     align-items: center;
 }
 .sidebar{
-    padding-left: 10px;
+    padding-left: 2px;
     border-radius: 15px;
     width: 20vw;
     height: 50vh;
@@ -56,7 +53,6 @@ h2{
     padding: 0;
     margin: 0;
 }
-
 .main-content{
     margin:10px;
     padding:20px;
@@ -65,12 +61,13 @@ h2{
 
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-
     background: rgba(64,248,159,0.18);
     border:1px solid rgba(24,233,226,0.3);
     border-radius:15px;
 }
+.task-list{
 
+}
 .main-content h1{
     color:white;
     text-align:center;
@@ -78,12 +75,10 @@ h2{
 }
 .add-task{
     display: flex;
-    /* flex-direction: row; */
     justify-content: center;
     gap: 15px;
 }
 .input-row{
-
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -98,12 +93,10 @@ h2{
     flex-direction: column;
 }
 .task-input{
-
     flex:1;
     width:180px;
     min-height: 30px;
     padding:0 12px;
-
     border:none;
     outline:none;
     border-radius:8px;
@@ -112,15 +105,11 @@ h2{
     font-size:15px;
     transition:.3s;
 }
-
 .task-input::placeholder{
     color:rgba(255,255,255,.8);
 }
-
 .task-input:focus{
-
     border:2px solid rgb(41,233,175);
-
     box-shadow:0 0 10px rgba(41,233,175,.4);
 }
 .filter{
@@ -131,7 +120,6 @@ h2{
     gap:10px;
     flex-wrap:wrap;
 }
-
 .filter button{
     min-width:100px;
     height:28px;
@@ -143,9 +131,7 @@ h2{
     cursor:pointer;
     transition:.3s;
 }
-
 .filter button:hover{
-
     background:#14b67b;
     transform:translateY(-2px);
     box-shadow:0 5px 15px rgba(0,0,0,.25);
@@ -153,14 +139,11 @@ h2{
  .time-box{
     flex-shrink:0;
     display:flex;
-
     align-items:center;
-
     gap:8px;
 }
 
 .time-label{
-
     color:white;
     font-size:15px;
 }
@@ -214,13 +197,11 @@ h2{
     cursor:pointer;
     transition:.3s;
 }
-
 .deletebtn:hover{
 
     background:#e8415a;
     transform:scale(1.05);
 }
-
 .task-error,
 .time-error{
     
@@ -248,223 +229,82 @@ h2{
     margin-left:auto;
 }
 .task-list{
+    margin: 6px;
     border-radius:8px;
-    height: 40%;
+    height: 50%;
     background-color: #149b6a;
     margin-top:2px;
     max-height:180px;
     overflow-y:auto;
 }
-
 @media screen and (max-width: 1080px) {
-
     .container {
         width: 80%;
         height: auto;
         padding: 10px;
     }
-
     .sidebar {
         width: 30%;
         height: 400px;
         font-size: 17px;
     }
-
     .main-content {
         width: 60%;
         height: 400px;
         padding: 15px;
     }
-
     .input-row {
         gap: 10px;
     }
-
     .task-input {
         width: 160px;
     }
-
     .time-input {
         width: 110px;
     }
-
     .add-btn {
         margin-left: 0;
         width: 120px;
     }
-
     .filter {
         gap: 8px;
     }
 }
-
-@media screen and (max-width: 768px) {
-
-    body {
-        align-items: flex-start;
-        padding: 20px 0;
-    }
-
-    .container {
-        width: 90%;
-        height: auto;
-        flex-direction: column;
-        padding: 10px;
-    }
-
-    .sidebar {
-        width: 100%;
-        height: auto;
-        min-height: 180px;
-        margin: 5px;
-        padding: 10px;
-    }
-
-    .main-content {
-        width: 100%;
-        height: auto;
-        min-height: 400px;
-        margin: 5px;
-        padding: 15px;
-    }
-
-    .input-row {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 10px;
-    }
-
-    .task-box,
-    .time-box {
-        width: 100%;
-    }
-
-    .task-input,
-    .time-input {
-        width: 100%;
-    }
-
-    .time-box {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .time-input {
-        flex: 1;
-    }
-
-    .add-btn {
-        width: 100%;
-        margin-left: 0;
-    }
-
-    .filter {
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 8px;
-    }
-
-    .filter button {
-        min-width: 90px;
-    }
-
-    .displaydiv {
-        width: 100%;
-        height: auto;
-        min-height: 40px;
-        padding: 8px;
-    }
-}
-
 @media screen and (max-width: 480px) {
 
     .container {
-        width: 95%;
+        display: flex;
+        flex-direction: column-reverse;
+        width: 80%;
+        height: 100vh;
     }
-
     .main-content {
-        padding: 10px;
+        height: 300px;
+        width: 95%;
+        padding: 6px;
     }
-
     .main-content h1 {
         font-size: 24px;
+        margin-bottom: 2px;
     }
-
     .sidebar {
-        min-height: 150px;
+        height: 350px;
+        width: 90%;
+        padding-bottom: 1px;
+        padding-right: 8px;
         font-size: 16px;
     }
-
     .filter button {
         min-width: 80px;
         font-size: 13px;
     }
-
     .displaydiv {
         font-size: 14px;
     }
-
+    .task-list{
+        height: 290px;
+    }
     .deletebtn {
         font-size: 11px;
     }
 }
-/* @media screen and (max-width: 1080px){
-    .container{
-        height: 50%;
-        width: 70%;
-    }
-    .main-content{
-        height: 400px;
-        gap: 0;
-        padding-left: 6px;
-    }
-    .sidebar{
-        padding: 2px;
-        font-size: medium;
-        height: 400px;
-        width: 250px;
-        gap: 0;
-    }
-    .filter{
-        display: flex;
-        flex-direction: column;
-    }
-    
-}
-@media screen and (max-width: 810px) {
-    .container{
-        height: 50%;
-        width: 80%;
-    }
-
-}
-@media screen and (min-width: 700px) {
-     .container{
-        height: 500px;
-        width: 80%;
-    }
-}
-@media screen and (max-width: 480px) {
-     .container{
-        margin-bottom: 10px;
-        height: 700px;
-        width: 70%;
-
-    }
-    .sidebar{
-        height: 280px;
-        width: 80%;
-        padding: 2px;
-    }
-    .main-content{
-        height: 380px;
-        width: 80%;
-    }
-    .filter{
-        font-size: x-small;
-        height: 100px;
-        width: 30px;
-        font-size: x-small;
-    }
-} */
