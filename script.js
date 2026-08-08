@@ -11,6 +11,13 @@ const taskList = document.querySelector('.task-list');
 
 let tasks = [];
 
+let savedTask = JSON.parse(localStorage.getItem("tasks"));
+
+if(savedTask){
+    tasks = savedTask;
+}
+displayTask(tasks);
+
 addBtn.addEventListener('click', function(){
 
 
@@ -37,14 +44,15 @@ addBtn.addEventListener('click', function(){
 
     taskIn.textContent = "";
     timeError.textContent = "";
-    displayTask();
+    displayTask(tasks);
     task.value = "";
     time.value = "";
 });
-function displayTask(){
+function displayTask(taskArray){
     taskList.innerHTML = "";
 
-    tasks.forEach(function(item, index){
+    taskArray.forEach(function(item, index){
+
         let displaydiv = document.createElement("div");
         displaydiv.className = "displaydiv"
         let check = document.createElement("input");
@@ -53,15 +61,12 @@ function displayTask(){
         check.className = "tickbox"
         let taskText = document.createElement("span");
         taskText.textContent = item.task + " " + item.time;
-
-        // displaydiv.textContent = item.task +" "+  item.time;
         
         
         let deleteBtn = document.createElement('button');
         deleteBtn.textContent = "Delete";
         deleteBtn.className = "deletebtn"
         displaydiv.appendChild(check);
-        displaydiv.append(item.task + " " + item.time);
         displaydiv.appendChild(deleteBtn);
         displaydiv.appendChild(taskText);
 
@@ -71,14 +76,14 @@ function displayTask(){
         deleteBtn.addEventListener("click", function(){
         tasks.splice(index,1);
         localStorage.setItem("tasks", JSON.stringify(tasks));
-        displayTask();
+        displayTask(tasks);
 
 });
 check.addEventListener("click", function(){
-            // item.complete = check.checked;
-            // localStorage.setItem("tasks", JSON.stringify(tasks));
-            // taskText.textContent = item.task + " " + item.time;
-            // displayTask()
+            item.complete = check.checked;
+            localStorage.setItem("tasks", JSON.stringify(tasks));
+            taskText.textContent = item.task + " " + item.time;
+            displayTask(tasks)
             item.complete = check.checked;
 
 if(item.complete){
@@ -92,4 +97,21 @@ localStorage.setItem("tasks", JSON.stringify(tasks));
     })
     
 };
+complete.addEventListener('click', function(){
+    let completedTask = tasks.filter(function(item){
+        return item.complete;
+       
+    });
+     displayTask(completedTask);
+})
+allBtn.addEventListener('click', function(){
+    displayTask(tasks);
+});
+pending.addEventListener("click", function(){
 
+    let pendingTask = tasks.filter(function(item){
+        return !item.complete;
+    });
+
+    displayTask(pendingTask);
+});

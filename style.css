@@ -255,3 +255,216 @@ h2{
     max-height:180px;
     overflow-y:auto;
 }
+
+@media screen and (max-width: 1080px) {
+
+    .container {
+        width: 80%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .sidebar {
+        width: 30%;
+        height: 400px;
+        font-size: 17px;
+    }
+
+    .main-content {
+        width: 60%;
+        height: 400px;
+        padding: 15px;
+    }
+
+    .input-row {
+        gap: 10px;
+    }
+
+    .task-input {
+        width: 160px;
+    }
+
+    .time-input {
+        width: 110px;
+    }
+
+    .add-btn {
+        margin-left: 0;
+        width: 120px;
+    }
+
+    .filter {
+        gap: 8px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    body {
+        align-items: flex-start;
+        padding: 20px 0;
+    }
+
+    .container {
+        width: 90%;
+        height: auto;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        min-height: 180px;
+        margin: 5px;
+        padding: 10px;
+    }
+
+    .main-content {
+        width: 100%;
+        height: auto;
+        min-height: 400px;
+        margin: 5px;
+        padding: 15px;
+    }
+
+    .input-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .task-box,
+    .time-box {
+        width: 100%;
+    }
+
+    .task-input,
+    .time-input {
+        width: 100%;
+    }
+
+    .time-box {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .time-input {
+        flex: 1;
+    }
+
+    .add-btn {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .filter {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .filter button {
+        min-width: 90px;
+    }
+
+    .displaydiv {
+        width: 100%;
+        height: auto;
+        min-height: 40px;
+        padding: 8px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .container {
+        width: 95%;
+    }
+
+    .main-content {
+        padding: 10px;
+    }
+
+    .main-content h1 {
+        font-size: 24px;
+    }
+
+    .sidebar {
+        min-height: 150px;
+        font-size: 16px;
+    }
+
+    .filter button {
+        min-width: 80px;
+        font-size: 13px;
+    }
+
+    .displaydiv {
+        font-size: 14px;
+    }
+
+    .deletebtn {
+        font-size: 11px;
+    }
+}
+/* @media screen and (max-width: 1080px){
+    .container{
+        height: 50%;
+        width: 70%;
+    }
+    .main-content{
+        height: 400px;
+        gap: 0;
+        padding-left: 6px;
+    }
+    .sidebar{
+        padding: 2px;
+        font-size: medium;
+        height: 400px;
+        width: 250px;
+        gap: 0;
+    }
+    .filter{
+        display: flex;
+        flex-direction: column;
+    }
+    
+}
+@media screen and (max-width: 810px) {
+    .container{
+        height: 50%;
+        width: 80%;
+    }
+
+}
+@media screen and (min-width: 700px) {
+     .container{
+        height: 500px;
+        width: 80%;
+    }
+}
+@media screen and (max-width: 480px) {
+     .container{
+        margin-bottom: 10px;
+        height: 700px;
+        width: 70%;
+
+    }
+    .sidebar{
+        height: 280px;
+        width: 80%;
+        padding: 2px;
+    }
+    .main-content{
+        height: 380px;
+        width: 80%;
+    }
+    .filter{
+        font-size: x-small;
+        height: 100px;
+        width: 30px;
+        font-size: x-small;
+    }
+} */
