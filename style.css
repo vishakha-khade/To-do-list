@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 body{
-    background-image: url("images/backroundimage.jpg");
+    background-image: url("images/Wall.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -43,7 +43,6 @@ body{
 h2{
     padding-bottom: 4px;
     margin-top: 2px;
-    padding: 4px;
     background-color:  rgba(8, 85, 59, 0.248);
     border-radius: 10px;
    
@@ -64,9 +63,6 @@ h2{
     background: rgba(64,248,159,0.18);
     border:1px solid rgba(24,233,226,0.3);
     border-radius:15px;
-}
-.task-list{
-
 }
 .main-content h1{
     color:white;
@@ -167,7 +163,7 @@ h2{
     box-shadow:0 0 10px rgba(41,233,175,.4);
 }
 .add-btn{
-    margin-left: 20px;
+    margin-left: 80px;
     width:150px;
     height:30px;
     border:none;
