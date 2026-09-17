@@ -8,10 +8,12 @@ body{
     background-repeat: no-repeat;
     margin: 0;
     display: flex;
-    justify-content: center; 
-    align-items: center;       
+    justify-content: center;
+    align-items: center;
     min-height: 100vh;
     width: 100%;
+    padding: 24px;
+    font-family: Arial, sans-serif;
 }
 .container{
     backdrop-filter: blur(15px);
@@ -20,29 +22,26 @@ body{
     border: 1px solid rgba(50, 232, 226, 0.3);
     box-shadow: 0 8px 32px rgba(243, 230, 230, 0.15);
     border-radius: 20px;
-    height: 60vh;
-    width: 50%;
+    width: min(100%, 960px);
+    min-height: 560px;
+    padding: 18px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    gap: 18px;
+    align-items: stretch;
 }
 .sidebar{
-    padding-left: 2px;
+    padding: 16px;
     border-radius: 15px;
-    width: 20vw;
-    height: 50vh;
-    margin: 10px;
+    flex: 0 0 220px;
+    margin: 0;
     font-size: 20px;
-    margin-top: 10px;
-    margin-left: 0rcap;
     text-align: left;
     color: white;
     background-color: rgb(12, 128, 89);
 }
 h2{
-    padding-bottom: 4px;
-    margin-top: 2px;
+    padding: 10px;
+    margin: 0 0 14px;
     background-color:  rgba(8, 85, 59, 0.248);
     border-radius: 10px;
    
@@ -52,11 +51,17 @@ h2{
     padding: 0;
     margin: 0;
 }
+.sidebar li {
+    padding: 10px 8px;
+    border-radius: 8px;
+}
+.sidebar li:hover {
+    background: rgba(255, 255, 255, 0.14);
+}
 .main-content{
-    margin:10px;
-    padding:20px;
-    width:50%;
-    height:50vh;
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 24px;
 
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
@@ -67,19 +72,20 @@ h2{
 .main-content h1{
     color:white;
     text-align:center;
-    margin-bottom:20px;
+    margin: 0 0 24px;
 }
 .add-task{
-    display: flex;
-    justify-content: center;
-    gap: 15px;
+    width: 100%;
 }
 .input-row{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:15px;
-    flex-wrap:wrap;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    align-items: end;
+    gap: 12px;
+}
+.task-box,
+.time-box {
+    min-width: 0;
 }
 .task-label{
     color: white;
@@ -88,11 +94,15 @@ h2{
     display: flex;
     flex-direction: column;
 }
+.task-label,
+.time-label {
+    display: block;
+    margin-bottom: 6px;
+}
 .task-input{
-    flex:1;
-    width:180px;
-    min-height: 30px;
-    padding:0 12px;
+    width: 100%;
+    min-height: 40px;
+    padding: 0 12px;
     border:none;
     outline:none;
     border-radius:8px;
@@ -111,14 +121,13 @@ h2{
 .filter{
     display: flex;
     justify-content: center;
-    margin-top:10px;
-    display:flex;
-    gap:10px;
+    margin-top: 20px;
+    gap: 10px;
     flex-wrap:wrap;
 }
 .filter button{
     min-width:100px;
-    height:28px;
+    min-height:38px;
     border:none;
     border-radius:8px;
     background:rgba(255,255,255,.15);
@@ -133,10 +142,8 @@ h2{
     box-shadow:0 5px 15px rgba(0,0,0,.25);
 }
  .time-box{
-    flex-shrink:0;
-    display:flex;
-    align-items:center;
-    gap:8px;
+    display: flex;
+    flex-direction: column;
 }
 
 .time-label{
@@ -145,7 +152,7 @@ h2{
 }
 .time-input{
 
-    width:120px;
+    width:130px;
     height:40px;
     border:none;
     outline:none;
@@ -163,9 +170,9 @@ h2{
     box-shadow:0 0 10px rgba(41,233,175,.4);
 }
 .add-btn{
-    margin-left: 80px;
-    width:150px;
-    height:30px;
+    margin: 0;
+    width: 120px;
+    min-height: 40px;
     border:none;
     border-radius:8px;
     background:linear-gradient(135deg,#0c8059,#17b67b);
@@ -209,10 +216,9 @@ h2{
     font-size: medium;
     display:flex;
     align-items:center;
-    justify-content:space-between;
-    height: 30px;
-    margin-top:10px;
-    padding:10px;
+    min-height: 42px;
+    margin-top: 10px;
+    padding: 8px 10px;
     background:rgba(255,255,255,.15);
     border-radius:8px;
 }
@@ -221,86 +227,85 @@ h2{
     align-items:center;
     gap:10px;
 }
+.displaydiv .task-text {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+.tickbox {
+    flex: 0 0 auto;
+    width: 18px;
+    height: 18px;
+}
 .deletebtn{
     margin-left:auto;
+    min-height: 28px;
+    padding: 4px 8px;
 }
 .task-list{
-    margin: 6px;
+    margin: 18px 0 0;
     border-radius:8px;
-    height: 50%;
+    min-height: 160px;
     background-color: #149b6a;
-    margin-top:2px;
-    max-height:180px;
+    max-height: 280px;
     overflow-y:auto;
 }
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 760px) {
     .container {
-        width: 80%;
-        height: auto;
-        padding: 10px;
+        min-height: 0;
+        padding: 12px;
+        flex-direction: column;
     }
     .sidebar {
-        width: 30%;
-        height: 400px;
-        font-size: 17px;
-    }
-    .main-content {
-        width: 60%;
-        height: 400px;
-        padding: 15px;
-    }
-    .input-row {
-        gap: 10px;
-    }
-    .task-input {
-        width: 160px;
-    }
-    .time-input {
-        width: 110px;
-    }
-    .add-btn {
-        margin-left: 0;
-        width: 120px;
-    }
-    .filter {
-        gap: 8px;
-    }
-}
-@media screen and (max-width: 480px) {
-
-    .container {
-        display: flex;
-        flex-direction: column-reverse;
-        width: 80%;
-        height: 100vh;
-    }
-    .main-content {
-        height: 300px;
-        width: 95%;
-        padding: 6px;
-    }
-    .main-content h1 {
-        font-size: 24px;
-        margin-bottom: 2px;
-    }
-    .sidebar {
-        height: 350px;
-        width: 90%;
-        padding-bottom: 1px;
-        padding-right: 8px;
+        flex-basis: auto;
+        width: 100%;
         font-size: 16px;
     }
+    .main-content {
+        width: 100%;
+        padding: 18px;
+    }
+    .sidebar ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4px;
+    }
+    .task-list {
+        max-height: 220px;
+    }
+}
+@media screen and (max-width: 520px) {
+    body {
+        align-items: flex-start;
+        padding: 12px;
+    }
+    .container {
+        border-radius: 14px;
+        gap: 12px;
+    }
+    .main-content h1 {
+        font-size: 25px;
+    }
+    .input-row {
+        grid-template-columns: 1fr 1fr;
+    }
+    .task-box {
+        grid-column: 1 / -1;
+    }
+    .time-input,
+    .add-btn {
+        width: 100%;
+    }
+    .filter {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+    }
     .filter button {
-        min-width: 80px;
-        font-size: 13px;
+        min-width: 0;
+        width: 100%;
+        font-size: 12px;
     }
     .displaydiv {
         font-size: 14px;
-    }
-    .task-list{
-        height: 290px;
-    }
-    .deletebtn {
-        font-size: 11px;
     }
 }
